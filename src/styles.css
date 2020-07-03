@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 97.5mm;
+  min-height: 150mm;
+  max-width: 97.5mm;
+  max-height: 150mm;
+  border-radius: 10px;
+  background-color: #3d3d3d;
+  color: #ffffff;
+}
+.top {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: #3d3d3d;
+  margin: 10px;
+  font-family: "Roboto";
+}
+.top > .left {
+  width: 30px;
+  text-align: left;
+}
+.top > .right {
+  font-size: 0.9em;
+  font-weight: 300;
+  width: 30px;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 24px;
+}
+.top > p {
+  width: 100%;
+}
+.top-center-top {
+  height: 24px;
+}
+.top-bottom {
+  font-size: 12px;
+  margin: auto;
+}
+.round {
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.white {
+  color: white;
+}
+.blue {
+  color: #00ccff;
+}
+.yellow {
+  color: #ffd050;
+}
+.green {
+  color: #2ec973;
+}
+.red {
+  color: #d7263d;
+}
+.purple {
+  color: #9649cb;
+}
+.cost {
+  font-size: 20px;
+  text-align: center;
+}
+.fit {
+  margin: 0;
+  width: fit-content;
+  white-space: pre-wrap;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 0.9em;
+  font-weight: 300;
+  overflow: hidden;
+  width: 90%;
+  margin: 10px auto;
+  box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+  background-color: #272727;
+}
+.middle > p {
+  margin: 5px;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 10px auto;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+.bottom > .left {
+  width: 48px;
+  height: 48px;
+  line-height: 24px;
+  text-align: center;
+}
+.bottom > .middle {
+  font-size: 0.9em;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 2;
+}
+.bottom > .right {
+  width: 48px;
+  line-height: 48px;
+  text-align: center;
+}
+#right-arrow,
+#left-arrow {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin: 15px;
+}
+button:focus {
+  outline: 0;
+}
+.separator {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+.separator::before {
+  background-color: rgba(255, 255, 255, 0.4);
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
