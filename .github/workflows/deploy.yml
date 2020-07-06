@@ -1,4 +1,4 @@
-name: Build andDeploy to Firebase
+name: Build and Deploy
 on:
   push:
     branches:
@@ -8,12 +8,19 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: Yarn Installation
+        run: |
+          mkdir ~/.npm-global
+          npm config set prefix '~/.npm-global'
+          export PATH=~/.npm-global/bin:$PATH
+          source ~/.profile
+          npm install -g yarn
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: npm install
+        run: yarn install
       - name: Build
-        run: npm run build
+        run: yarn build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
