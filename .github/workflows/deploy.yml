@@ -1,7 +1,7 @@
-name: Build andDeploy to Firebase	name: Build and Deploy
-on:	on:
-  push:	  push:
-    branches:	    branches:
+name: Build andDeploy to Firebase
+on:
+  push:
+    branches:
       - master
 jobs:
   build:
