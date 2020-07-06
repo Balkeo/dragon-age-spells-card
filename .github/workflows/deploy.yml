@@ -1,26 +1,18 @@
-name: Build and Deploy
-on:
-  push:
-    branches:
-      - master
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Yarn Installation
-        run: |
-          mkdir ~/.npm-global
-          npm config set prefix '~/.npm-global'
-          export PATH=~/.npm-global/bin:$PATH
-          source ~/.profile
-          npm install -g yarn
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
+      - name: Run Tests
+        env:
+          CI: true
+        run: npm test
       - name: Build
-        run: yarn build
+        run: npm run build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
