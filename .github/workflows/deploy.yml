@@ -38,4 +38,4 @@ jobs:
         with:
           name: build
       - name: GitHub Action for Firebase
-        uses: irebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting --non-interactive
+        uses: firebase deploy --token ${{ FIREBASE_TOKEN }} --only hosting --non-interactive
