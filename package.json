@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "bootstrap": "4.5.0",
+    "firebase-tools": "^8.4.3",
     "jexl": "2.2.2",
     "react": "16.5.2",
     "react-dom": "16.5.2",
