@@ -4,7 +4,7 @@ import Jexl from "./Jexl";
 
 import Card from "./Card";
 import Filters from "./Filters";
-import Spells from "../public/Spells.json";
+import Spells from "./Spells.json";
 
 class Deck extends React.Component {
   constructor(props) {

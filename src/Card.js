@@ -1,11 +1,11 @@
 import React from "react";
 
-import Creation from "../public/img/Creation.png";
-import Entropie from "../public/img/Entropie.png";
-import Esprit from "../public/img/Esprit.png";
-import Elements from "../public/img/Elements.png";
-import Ecole from "../public/img/School.png";
-import Sang from "../public/img/Sang.png";
+import Creation from "./img/Creation.png";
+import Entropie from "./img/Entropie.png";
+import Esprit from "./img/Esprit.png";
+import Elements from "./img/Elements.png";
+import Ecole from "./img/School.png";
+import Sang from "./img/Sang.png";
 
 class Card extends React.Component {
   getPictureForSpell = spell => {
