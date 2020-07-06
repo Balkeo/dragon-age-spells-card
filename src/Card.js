@@ -1,32 +1,6 @@
 import React from "react";
 
-import Creation from "assets/Creation.png";
-import Entropie from "assets/Entropie.png";
-import Esprit from "assets/Esprit.png";
-import Elements from "assets/Elements.png";
-import Ecole from "assets/School.png";
-import Sang from "assets/Sang.png";
-
 class Card extends React.Component {
-  getPictureForSpell = spell => {
-    switch (spell.school) {
-      case "Création":
-        return Creation;
-      case "Entropie":
-        return Entropie;
-      case "Esprit":
-        return Esprit;
-      case "Éléments":
-        return Elements;
-      case "Ecole":
-        return Ecole;
-      case "Sang":
-        return Sang;
-      default:
-        return Ecole;
-    }
-  };
-
   trunc = (string, length, useWordBoundary) => {
     if (string.length <= length) {
       return string;
@@ -46,11 +20,7 @@ class Card extends React.Component {
         <div className="card">
           <div className="top">
             <div className="left">
-              <img
-                className="round"
-                src={this.getPictureForSpell(spell)}
-                alt="school"
-              />
+            <p className=" blue fit cost">{spell.school}</p>
             </div>
             <div className="green" style={{ width: "240px" }}>
               <p className="top-center-top" style={{ margin: "auto" }}>
@@ -60,7 +30,6 @@ class Card extends React.Component {
             </div>
             <div className="right">
               <p className=" blue fit cost">{spell.cost}</p>
-              {/*<img className="round" src={ManaPot} alt="cost" />*/}
             </div>
           </div>
           <div className="separator" />
