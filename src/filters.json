@@ -19,33 +19,5 @@
       { "label": "Défense", "value": "type == 'Défense'" },
       { "label": "Attaque", "value": "type == 'Attaque'" }
     ]
-  },
-  {
-    "key": "cost",
-    "label": "Coût",
-    "filters": [
-      { "label": "<5", "value": "cost<5" },
-      { "label": "6-10", "value": "cost>5 && cost<11" },
-      { "label": "11-15", "value": "cost>10 && cost<16" },
-      { "label": ">15", "value": "cost>15" }
-    ]
-  },
-  {
-    "key": "cast",
-    "label": "Incantation",
-    "filters": [
-      { "label": "1 Action Majeure", "value": "cast == '1 Action Majeure'" },
-      { "label": "1 Minute", "value": "cast == '1 Minute'" },
-      { "label": "5 Minutes", "value": "cast == '5 Minutes'" },
-      { "label": "1 Heure", "value": "cast == '1 Heure'" }
-    ]
-  },
-  {
-    "key": "difficulty",
-    "label": "Difficulté",
-    "filters": [
-      { "label": "<16", "value": "difficulty<16" },
-      { "label": ">15", "value": "difficulty>15" }
-    ]
   }
 ]

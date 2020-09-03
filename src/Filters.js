@@ -16,9 +16,6 @@ class Filters extends React.Component {
           isString={typeof value.filters === "string"}
           values={this.props.filters[value.key]}
           onChange={this.props.onFilterChange}
-          style={{
-            height: "30px"
-          }}
         />
       );
     }

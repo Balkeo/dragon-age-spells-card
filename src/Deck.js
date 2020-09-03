@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import Jexl from "./Jexl";
+import { Swipeable } from 'react-swipeable'
 
 import Card from "./Card";
 import Filters from "./Filters";
@@ -12,12 +13,10 @@ class Deck extends React.Component {
     this.state = {
       index: 0,
       spells: Spells,
+      displayMenu: false,
       filters: {
         school: [],
-        type: [],
-        cast: [],
-        cost: [],
-        difficulty: []
+        type: []
       }
     };
   }
@@ -90,45 +89,85 @@ class Deck extends React.Component {
   filtersAreNotEmpty = () => {
     if (
       this.state.filters.school.length > 0 ||
-      this.state.filters.type.length > 0 ||
-      this.state.filters.cast.length > 0 ||
-      this.state.filters.cost.length > 0 ||
-      this.state.filters.difficulty.length > 0
+      this.state.filters.type.length > 0
     ) {
       return true;
     }
     return false;
   };
 
+  moveMenu = (show) => {
+    let state = this.state;
+    state.displayMenu = show;
+    this.setState(state);
+  }
+
   render() {
     let filteredSpells = this.filterSpells();
+
     return (
       <div
         style={{
-          display: "flex",
-          flexDirection: "column"
+          height: "100%",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            alignItems: "center",
-            width: "100%",
-            height: "50px",
-            backgroundColor: "#3d3d3d",
-            color: "#ffffff",
-            marginBottom: "40px",
-            boxShadow: "0 4px 2px -2px rgba(0, 0, 0, 0.3)"
-          }}
+        <Swipeable
+          onSwipedLeft={() => this.moveMenu(false)}
+          onSwipedRight={() => this.moveMenu(true)}
         >
-          <Filters
-            filters={this.state.filters}
-            onFilterChange={this.updateFilters}
-          />
-        </div>
-        <div className="deck">
+          <div
+            className="filters-container"
+            style={{
+              position: "absolute",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              left: this.state.displayMenu ? "0" : "-100px",
+              width: "100px",
+              height: "100%",
+              backgroundColor: "#3d3d3d",
+              color: "#ffffff",
+              padding: "30px 0",
+              zIndex: "2",
+              transition: "left 0.5s ease-out"
+            }}
+          >
+            <Filters
+              filters={this.state.filters}
+              onFilterChange={this.updateFilters}
+            />
+          </div>
+          <div
+            className="filters-displayer"
+            style={{
+              position: "absolute",
+              left: this.state.displayMenu ? "100px" : "0px",
+              width: "12px",
+              height: "100%",
+              backgroundColor: "#3d3d3d",
+              color: "#4E4E4E",
+              lineHeight: "20px",
+              zIndex: "2",
+              transition: "left 0.5s ease-out",
+              boxShadow: "10px 0px 13px -7px #000000, 5px 5px 5px 5px rgba(0,0,0,0)",
+              borderRight: "1px solid black",
+              paddingLeft: "4px"
+            }}
+            onClick={() => this.moveMenu(!this.state.displayMenu)}
+          >
+            <div style={
+              {
+                height: "32px",
+                width: "4px",
+                backgroundColor: "#FFFFFF",
+                position: "absolute",
+                top: "calc(50% - 16px)",
+                borderRadius: "5px"
+              }
+            }/>
+          </div>
+        </Swipeable>
+        <div className="deck" style={{paddingTop: "20px"}}>
           {filteredSpells.length > 1 ? (
             <Button
               outline
@@ -145,12 +184,17 @@ class Deck extends React.Component {
           ) : (
             ""
           )}
-          <Card
-            spell={filteredSpells[this.state.index]}
-            index={this.state.index}
-            total={filteredSpells.length}
-            jumpToSpell={this.goToSpell}
-          />
+          <Swipeable
+            onSwipedLeft={() => this.nextSpell(filteredSpells)}
+            onSwipedRight={() => this.prevSpell(filteredSpells)}
+          >
+            <Card
+              spell={filteredSpells[this.state.index]}
+              index={this.state.index}
+              total={filteredSpells.length}
+              jumpToSpell={this.goToSpell}
+            />
+          </Swipeable>
           {filteredSpells.length > 1 ? (
             <Button
               outline

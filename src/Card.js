@@ -34,7 +34,7 @@ class Card extends React.Component {
           </div>
           <div className="separator" />
           <div className="middle">
-            <p className="fit" style={{ overflowY: "scroll" }}>
+            <p className="fit" style={{ overflowY: "scroll", width: "294px" }}>
               {spell.description}
             </p>
           </div>

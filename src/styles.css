@@ -5,6 +5,11 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+.App, #root, body, html {
+  height: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
 .deck {
   display: flex;
   justify-content: center;
@@ -13,10 +18,12 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  min-width: 97.5mm;
-  min-height: 150mm;
-  max-width: 97.5mm;
-  max-height: 150mm;
+  min-width: 340px;
+  min-height: 565px;
+  width: 340px;
+  height: 565px;
+  max-width: 340px;
+  max-height: 565px;
   border-radius: 10px;
   background-color: #3d3d3d;
   color: #ffffff;
@@ -26,23 +33,18 @@ body {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   text-align: center;
   background-color: #3d3d3d;
   margin: 10px;
   font-family: "Roboto";
 }
 .top > .left {
-  width: 30px;
   text-align: left;
+  width: 25%;
 }
 .top > .right {
-  font-size: 0.9em;
-  font-weight: 300;
-  width: 30px;
-  display: flex;
-  justify-content: flex-end;
-  line-height: 24px;
+  text-align: right;
+  width: 25%;
 }
 .top > p {
   width: 100%;
@@ -52,7 +54,6 @@ body {
 }
 .top-bottom {
   font-size: 12px;
-  margin: auto;
 }
 .round {
   height: 30px;
@@ -83,8 +84,6 @@ body {
 }
 .fit {
   margin: 0;
-  width: fit-content;
-  white-space: pre-wrap;
 }
 .middle {
   display: flex;
@@ -94,6 +93,7 @@ body {
   font-weight: 300;
   overflow: hidden;
   width: 90%;
+  max-width: 90% !important;
   margin: 10px auto;
   box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
   background-color: #272727;
@@ -104,32 +104,12 @@ body {
 .bottom {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   margin: 10px auto;
   font-size: 0.9em;
   font-weight: 300;
-}
-.bottom > .left {
-  width: 48px;
-  height: 48px;
-  line-height: 24px;
-  text-align: center;
-}
-.bottom > .middle {
-  font-size: 0.9em;
-  line-height: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 2;
-}
-.bottom > .right {
-  width: 48px;
-  line-height: 48px;
-  text-align: center;
 }
 #right-arrow,
 #left-arrow {
@@ -156,4 +136,15 @@ button:focus {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+}
+@media screen and (max-width: 600px) {
+  .arrow {
+    display: none;
+  }
+  .card {
+    margin: auto !important;
+  }
+  .filters-container {
+    margin-bottom: 20px !important;
+  }
 }

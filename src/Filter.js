@@ -11,7 +11,9 @@ const customStyles = {
     outline: "none",
     ":hover": {
       borderColor: "rgba(255, 255, 255, 0.2)"
-    }
+    },
+    width: 80,
+    fontSize: 12
   }),
   dropdownIndicator: styles => ({
     ...styles,
@@ -68,7 +70,7 @@ class Filter extends React.Component {
 
   render() {
     return (
-      <div style={{ flexGrow: "1", margin: "0px 15px" }}>
+      <div style={{ flexGrow: "1" }}>
         {this.props.isString ? (
           <Input type="text" placeholder={this.props.name} />
         ) : (
