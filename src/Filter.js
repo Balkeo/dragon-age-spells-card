@@ -12,8 +12,8 @@ const customStyles = {
     ":hover": {
       borderColor: "rgba(255, 255, 255, 0.2)"
     },
-    width: 80,
-    fontSize: 12
+    fontSize: 12,
+    marginRight: "15px"
   }),
   dropdownIndicator: styles => ({
     ...styles,

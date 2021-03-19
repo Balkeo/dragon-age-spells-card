@@ -1,16 +1,5 @@
 [
   {
-    "name": "Nom",
-    "school": "Ecole",
-    "type": "Type",
-    "cost": "Coût",
-    "cast": "Cast",
-    "difficulty": "Difficulté",
-    "test": "Test",
-    "prerequisites": "Prérequis",
-    "description": "Description"
-  },
-  {
     "name": "Accélération",
     "school": "Création",
     "type": "Amélioration",

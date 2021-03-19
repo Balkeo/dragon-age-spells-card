@@ -45,27 +45,11 @@ class Card extends React.Component {
               <p className="fit top-bottom">{spell.cast}</p>
               <p
                 className="fit top-bottom"
-                onClick={e => this.props.jumpToSpell(spell.prerequisites)}
               >
                 {spell.prerequisites}
               </p>
             </div>
             <div className="cost yellow">{spell.difficulty}</div>
-          </div>
-        </div>
-        <div style={{ width: "100%" }}>
-          <div
-            style={{
-              margin: "auto",
-              width: "100px",
-              textAlign: "center",
-              backgroundColor: "#3d3d3d",
-              color: "#ffffff",
-              borderBottomRightRadius: "10px",
-              borderBottomLeftRadius: "10px"
-            }}
-          >
-            {this.props.index + 1} / {this.props.total}
           </div>
         </div>
       </div>
